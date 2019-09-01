@@ -24,11 +24,11 @@ namespace WeatherApp.Droid
 
         private async void Button_Click(object sender, EventArgs e)
         {
-            EditText zipCodeEntry = FindViewById<EditText>(Resource.Id.zipCodeEntry);
+            EditText nameEntry = FindViewById<EditText>(Resource.Id.zipCodeEntry);
 
-            if (!String.IsNullOrEmpty(zipCodeEntry.Text))
+            if (!String.IsNullOrEmpty(nameEntry.Text))
             {
-                Weather weather = await WeatherServices.GetWeather(zipCodeEntry.Text);
+                Weather weather = await WeatherServices.GetWeather(nameEntry.Text);
                 if (weather != null)
                 {
                     FindViewById<TextView>(Resource.Id.locationText).Text = weather.Title;
